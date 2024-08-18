@@ -20,3 +20,7 @@ test("return sum even-if new line is present in the input string", () => {
 test("return sum for numbers more than 1 digit", () => {
   expect(sum("12,33")).toBe(45);
 });
+
+test("return sum even-if delimiter is present in the input string", () => {
+  expect(sum("//;\n1;2")).toBe(3);
+});
