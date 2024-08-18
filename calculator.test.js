@@ -28,3 +28,7 @@ test("return sum even-if delimiter is present in the input string", () => {
 test("return error if negative number is detected", () => {
   expect(sum("1,22,-5")).toBe("negative numbers not allowed: -5");
 });
+
+test("return sum of '1,3 ,27\n 9 7;2//;\n1;23'", () => {
+  expect(sum("1,3 ,27\n 9 7;2//;\n1;23")).toBe(73);
+});
