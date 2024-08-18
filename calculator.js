@@ -1,14 +1,9 @@
 export function sum(str) {
   if (!str) return 0;
 
-  const numbers = [];
+  const numbers = str.match(/\d+/g) || [];
 
-  str.split("").map((ele, i) => {
-    const val = +ele;
-    if (!isNaN(val) && typeof val === "number") {
-      numbers.push(val);
-    }
-  });
+  const total = numbers.reduce((acc, num) => acc + parseInt(num, 10), 0);
 
-  return numbers.reduce((acc, cur) => +acc + +cur, 0);
+  return total;
 }

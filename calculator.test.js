@@ -16,3 +16,7 @@ test("return 6 if input is string '1,5'", () => {
 test("return sum even-if new line is present in the input string", () => {
   expect(sum("1\n2,3")).toBe(6);
 });
+
+test("return sum for numbers more than 1 digit", () => {
+  expect(sum("12,33")).toBe(45);
+});
