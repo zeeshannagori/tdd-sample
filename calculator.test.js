@@ -24,3 +24,7 @@ test("return sum for numbers more than 1 digit", () => {
 test("return sum even-if delimiter is present in the input string", () => {
   expect(sum("//;\n1;2")).toBe(3);
 });
+
+test("return error if negative number is detected", () => {
+  expect(sum("1,22,-5")).toBe("negative numbers not allowed: -5");
+});
