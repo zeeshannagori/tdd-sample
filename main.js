@@ -2,12 +2,13 @@ import "./style.css";
 import { sum } from "./calculator";
 
 document.querySelector("#app").innerHTML = `
+  <h1>TDD string calculator</h1>
   <div>
+    <span id="result"></span>
     <form>
-      <input type="text" />
+      <input type="text" placeholder="e.g., 1,2,3" />
       <button>Add</button>
     </form>
-    <span id="result"></span>
   </div>
 `;
 
