@@ -16,7 +16,9 @@ export function sum(str) {
   });
 
   if (negativeNumbers.length > 0) {
-    return `negative numbers not allowed: ${negativeNumbers.join(", ")}`;
+    throw new Error(
+      `negative numbers not allowed: ${negativeNumbers.join(", ")}`
+    );
   }
 
   return positiveNumbers.reduce((acc, num) => acc + num, 0);
