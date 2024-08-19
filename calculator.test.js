@@ -1,4 +1,4 @@
-import { expect, test } from "vitest";
+import { describe, expect, it, test } from "vitest";
 import { sum } from "./calculator";
 
 test("return 0 if input is empty", () => {
@@ -33,11 +33,18 @@ test("return sum of '1,3 ,27\n 9 7;2//;\n1;23'", () => {
   expect(sum("1,3 ,27\n 9 7;2//;\n1;23")).toBe(73);
 });
 
-test("renders the correct content in #app", () => {
+describe("UI Testing for main.js", () => {
   document.body.innerHTML = `<div id="app"></div>`;
 
-  document.querySelector("#app").innerHTML = ``;
+  it("renders the correct content in #app", () => {
+    const appDiv = document.getElementById("app");
+    expect(appDiv.innerHTML).toBe("");
+  });
 
-  const app = document.getElementById("app");
-  expect(app.innerHTML).toBe("");
+  it("renders updated content when main.js changes it", async () => {
+    await import("./main.js");
+
+    const appDiv = document.getElementById("app");
+    expect(appDiv.innerHTML);
+  });
 });
