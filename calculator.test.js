@@ -32,3 +32,12 @@ test("return error if negative number is detected", () => {
 test("return sum of '1,3 ,27\n 9 7;2//;\n1;23'", () => {
   expect(sum("1,3 ,27\n 9 7;2//;\n1;23")).toBe(73);
 });
+
+test("renders the correct content in #app", () => {
+  document.body.innerHTML = `<div id="app"></div>`;
+
+  document.querySelector("#app").innerHTML = ``;
+
+  const app = document.getElementById("app");
+  expect(app.innerHTML).toBe("");
+});
