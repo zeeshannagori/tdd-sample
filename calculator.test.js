@@ -45,6 +45,15 @@ describe("UI Testing for main.js", () => {
     await import("./main.js");
 
     const appDiv = document.getElementById("app");
-    expect(appDiv.innerHTML);
+
+    const form = appDiv.querySelector("form");
+    expect(form).not.toBeNull();
+
+    const input = form.querySelector("input[type='text']");
+    expect(input).not.toBeNull();
+
+    const button = form.querySelector("button");
+    expect(button).not.toBeNull();
+    expect(button.textContent).toBe("Add");
   });
 });
